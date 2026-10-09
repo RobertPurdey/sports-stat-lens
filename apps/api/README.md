@@ -1,5 +1,5 @@
 # Sports Stat Lens API
-Provides access to the sports data and ways to investigate it.
+Provides access to sports data and ways to investigate it.
 
 ---
 
@@ -20,14 +20,22 @@ npm run build
 npm start
 ```
 
-Port defaults to `3000`. Override with `PORT`. In production (and in Docker) the server binds `0.0.0.0`; locally it binds `127.0.0.1` unless `HOST` is set.
+Port defaults to `3000`. Override with `PORT`. Locally, the server binds to `127.0.0.1` unless `HOST` is set. In production and Docker, it binds to `0.0.0.0`.
 
 ---
 
 ### Docker
 
-Build from `apps/api`:
+Build and run from `apps/api`:
 
 ```bash
-docker compose up
+docker compose up --build
+```
+
+The API is available at `http://localhost:3000`.
+
+Stop the container with `Ctrl+C`, or run:
+
+```bash
+docker compose down
 ```
