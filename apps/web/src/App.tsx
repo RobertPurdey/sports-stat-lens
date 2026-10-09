@@ -1,5 +1,8 @@
+import { useLocale } from '@/contexts/LocaleContext';
 
 function App() {
+  const { text } = useLocale();
+
   return (
     <div className='flex min-h-screen flex-col bg-background text-foreground'>
       <header className='border-b border-border'>
@@ -8,12 +11,7 @@ function App() {
           aria-label='Main navigation'
         >
           <a href='/' className='flex items-center gap-2.5'>
-            <span className='flex size-9 items-center justify-center rounded-lg bg-primary/10 text-xl text-primary'>
-              ◈
-            </span>
-            <span className='text-lg font-bold tracking-tight'>
-              Sport<span className='text-primary'>Lens</span>
-            </span>
+            <span className='text-lg font-bold tracking-tight'>{text.brandName}</span>
           </a>
         </nav>
       </header>
@@ -27,21 +25,14 @@ function App() {
 
           <div className='mx-auto max-w-7xl px-6 py-28 sm:py-36 lg:py-44'>
             <div className='max-w-3xl'>
-              <p className='mb-6 text-sm font-semibold tracking-[0.2em] text-primary uppercase'>
-                A clear view of the game
-              </p>
-
+              <p className='mb-6 text-sm font-semibold tracking-[0.2em] text-primary uppercase'>{text.gameOverview}</p>
+             
               <h1 className='text-5xl leading-[1.1] font-bold tracking-tight sm:text-6xl lg:text-7xl'>
-                See the game
-                <span className='mt-2 block text-primary'>
-                  differently.
-                </span>
+                {text.headline}
+                <span className='mt-2 block text-primary'>{text.headlineAccent}</span>
               </h1>
 
-              <p className='mt-7 max-w-xl text-lg leading-8 text-secondary sm:text-xl'>
-                Explore sports data, uncover performance trends,
-                and discover the stories behind the numbers.
-              </p>
+              <p className='mt-7 max-w-xl text-lg leading-8 text-secondary sm:text-xl'>{text.introduction}</p>
             </div>
           </div>
         </section>
@@ -49,8 +40,8 @@ function App() {
 
       <footer className='border-t border-border'>
         <div className='mx-auto flex max-w-7xl items-center justify-between px-6 py-4 text-xs text-muted'>
-          <span className='font-semibold text-foreground'>SportLens</span>
-          <span>See the game differently.</span>
+          <span className='font-semibold text-foreground'>{text.brandName}</span>
+          <span>{text.tagline}</span>
         </div>
       </footer>
     </div>
