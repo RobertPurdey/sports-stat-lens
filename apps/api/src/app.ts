@@ -1,7 +1,7 @@
 import Fastify, { type FastifyServerOptions } from "fastify";
 import { registerHealthRoutes } from "./routes/health.js";
 
-export async function buildApp(options: FastifyServerOptions = {}) {
+export function buildApp(options: FastifyServerOptions = {}) {
   const app = Fastify({
     logger: true,
     ...options,
@@ -15,6 +15,7 @@ export async function buildApp(options: FastifyServerOptions = {}) {
     });
   });
 
-  await registerHealthRoutes(app);
+  registerHealthRoutes(app);
+
   return app;
 }
