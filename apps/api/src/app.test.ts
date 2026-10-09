@@ -1,25 +1,39 @@
-import assert from "node:assert/strict";
-import { after, before, test } from "node:test";
-import { buildApp } from "./app.js";
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+import { buildApp } from './app.js';
 
-const app = await buildApp({ logger: false });
+describe('App', () => {
+  let app: Awaited<ReturnType<typeof buildApp>>;
 
-before(async () => {
-  await app.ready();
-});
+  beforeAll(async () => {
+    app = await buildApp({ logger: false });
+    await app.ready();
+  });
 
-after(async () => {
-  await app.close();
-});
+  afterAll(async () => {
+    await app.close();
+  });
 
-test("GET /health returns ok", async () => {
-  const response = await app.inject({ method: "GET", url: "/health" });
-  assert.equal(response.statusCode, 200);
-  assert.deepEqual(response.json(), { status: "ok" });
-});
+  describe('GET /health', () => {
+    it('returns 200 with ok status', async () => {
+      const response = await app.inject({
+        method: 'GET',
+        url: '/health',
+      });
 
-test("GET /ready returns ok", async () => {
-  const response = await app.inject({ method: "GET", url: "/ready" });
-  assert.equal(response.statusCode, 200);
-  assert.deepEqual(response.json(), { status: "ok" });
+      expect(response.statusCode).toBe(200);
+      expect(response.json()).toEqual({ status: 'ok' });
+    });
+  });
+
+  describe('GET /ready', () => {
+    it('returns 200 with ok status', async () => {
+      const response = await app.inject({
+        method: 'GET',
+        url: '/ready',
+      });
+
+      expect(response.statusCode).toBe(200);
+      expect(response.json()).toEqual({ status: 'ok' });
+    });
+  });
 });
