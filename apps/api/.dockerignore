@@ -1,7 +1,9 @@
 node_modules
 dist
 coverage
-*.log
 .env
 .env.*
 .git
+*.log
+.nyc_output
+*.tsbuildinfo
