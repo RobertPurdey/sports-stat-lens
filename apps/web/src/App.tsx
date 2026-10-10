@@ -1,4 +1,4 @@
-import { useLocale } from '@/contexts/LocaleContext';
+import { useLocale } from '@/contexts/useLocale';
 
 function App() {
   const { text } = useLocale();
