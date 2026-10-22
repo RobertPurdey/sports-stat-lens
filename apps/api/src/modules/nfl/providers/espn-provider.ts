@@ -1,6 +1,8 @@
+import type { EspnScoreboardResponse } from "./types.js";
+
 const ESPN_SCOREBOARD_URL = process.env.ESPN_SCOREBOARD_URL;
 
-export async function getScoreboard(): Promise<unknown> {
+export async function getScoreboard(): Promise<EspnScoreboardResponse> {
   if (!ESPN_SCOREBOARD_URL) throw new Error('ESPN_SCOREBOARD_URL is not configured');
 
   const scoreboardResponse = await fetch(ESPN_SCOREBOARD_URL, {
@@ -11,5 +13,5 @@ export async function getScoreboard(): Promise<unknown> {
     throw new Error(`ESPN scoreboard request failed: ${scoreboardResponse.status}`)
   }
 
-  return scoreboardResponse.json();
+  return (await scoreboardResponse.json()) as EspnScoreboardResponse;
 }
