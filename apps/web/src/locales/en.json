@@ -1,10 +1,9 @@
-
 {
   "brandName": "SportsLens",
-  "tagline": "See the game differently.",
-  "navigationLabel": "Main navigation",
   "gameOverview": "A clear view of the game",
   "headline": "See the game",
   "headlineAccent": "differently.",
-  "introduction": "Explore sports data, uncover performance trends, and discover the stories behind the numbers."
+  "introduction": "Explore sports data, uncover performance trends, and discover the stories behind the numbers.",
+  "navigationLabel": "Main navigation",
+  "tagline": "See the game differently."
 }
