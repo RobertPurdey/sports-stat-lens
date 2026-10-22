@@ -1,11 +1,11 @@
 services:
   api:
     build:
-      context: ../../
-      dockerfile: apps/api/Dockerfile
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=development
     env_file:
-      - ./apps/api/.env
+      - ./.env
