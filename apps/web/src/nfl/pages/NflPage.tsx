@@ -1,4 +1,4 @@
-import nflLogo from '@/nfl/assets/nfl-logo.svg';
+import nflLogo from '@/assets/nfl-logo.svg';
 import { useLocale } from '@/contexts/useLocale';
 
 function NflPage() {
