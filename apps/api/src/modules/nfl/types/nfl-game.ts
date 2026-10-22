@@ -1,4 +1,4 @@
-import type { NflTeam } from './nfl-team.js';
+import type { NflTeam } from '@/modules/nfl/types/nfl-team.js';
 
 export type NflGameStatus = 'scheduled' | 'live' | 'final';
 

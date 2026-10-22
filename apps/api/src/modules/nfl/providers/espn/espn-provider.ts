@@ -1,4 +1,4 @@
-import type { EspnScoreboardResponse } from "./types.js";
+import type { EspnScoreboardResponse } from "@/modules/nfl/providers/espn/espn-types.js";
 
 const ESPN_SCOREBOARD_URL = process.env.ESPN_SCOREBOARD_URL;
 
