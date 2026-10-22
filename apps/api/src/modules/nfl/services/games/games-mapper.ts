@@ -1,7 +1,7 @@
 
-import type { EspnEvent, EspnCompetitor } from '@/modules/nfl/providers/espn/espn-types.js';
-import type { NflGame, NflGameStatus } from '@/modules/nfl/types/nfl-game.js';
-import type { NflTeam } from '@/modules/nfl/types/nfl-team.js';
+import type { EspnEvent, EspnCompetitor } from '#/modules/nfl/providers/espn/espn-types.js';
+import type { NflGame, NflGameStatus } from '#/modules/nfl/types/nfl-game.js';
+import type { NflTeam } from '#/modules/nfl/types/nfl-team.js';
 
 function mapTeam(competitor: EspnCompetitor): NflTeam {
   return {
