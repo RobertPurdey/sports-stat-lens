@@ -3,9 +3,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    command: npm run dev
     ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=development
+      - '3000:3000'
+    volumes:
+      - .:/app
+      - /app/node_modules
     env_file:
       - ./.env
