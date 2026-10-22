@@ -3,6 +3,16 @@ Provides access to sports data and ways to investigate it.
 
 ---
 
+## Setup
+
+Create a `.env` file in `apps/api` with the following configuration:
+
+```env
+ESPN_SCOREBOARD_URL=https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard
+```
+
+---
+
 ## Local
 
 ```bash
