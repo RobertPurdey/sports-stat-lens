@@ -20,15 +20,15 @@ export interface EspnCompetitor {
   team: EspnTeam;
 }
 
-export interface EspnCompetiton {
-  competitors: EspnCompetitor;
+export interface EspnCompetition {
+  competitors: EspnCompetitor[];
 }
 
 export interface EspnEvent {
   id: string;
   date: string;
   name: string;
-  competitions: EspnCompetiton[];
+  competitions: EspnCompetition[];
   status: EspnStatus;
 }
 
