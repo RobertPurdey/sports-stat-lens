@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router';
 import { useLocale } from '@/contexts/useLocale';
+import Navigation from '@/components/Navigation';
 
 function AppLayout() {
   const { text } = useLocale();
@@ -15,6 +16,8 @@ function AppLayout() {
         </nav>
       </header>
 
+      <Navigation />
+      
       <main className="flex-1">
         <Outlet />
       </main>
