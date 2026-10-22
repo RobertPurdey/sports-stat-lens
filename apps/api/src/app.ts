@@ -1,5 +1,6 @@
-import Fastify, { type FastifyServerOptions } from "fastify";
-import { registerHealthRoutes } from "./routes/health.js";
+import Fastify, { type FastifyServerOptions } from 'fastify';
+import { registerHealthRoutes } from '@/routes/health.js';
+import { registerGameRoutes } from '@/modules/nfl/routes/games-routes.js';
 
 export function buildApp(options: FastifyServerOptions = {}) {
   const app = Fastify({
@@ -15,7 +16,10 @@ export function buildApp(options: FastifyServerOptions = {}) {
     });
   });
 
-  registerHealthRoutes(app);
-
+  app.register(api => {
+    registerHealthRoutes(api);
+    registerGameRoutes(api);
+  }, { prefix: '/api' });
+  
   return app;
 }
