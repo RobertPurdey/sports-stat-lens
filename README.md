@@ -1,4 +1,5 @@
 # Sports Stat Lens
+A monorepo project.
 
 Provides access to live sports data and tools to investigate it.
 
