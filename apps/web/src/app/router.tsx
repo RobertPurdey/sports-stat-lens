@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router';
-import AppLayout from '@/app/AppLayout';
-import HomePage from '@/pages/HomePage';
-import NflPage from '@/nfl/pages/NflPage';
+import AppLayout from '@/app/app-layout';
+import HomePage from '@/pages/home';
+import NflPage from '@/nfl/pages/nfl-page';
 
 export const router = createBrowserRouter([
   {
