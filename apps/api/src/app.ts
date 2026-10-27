@@ -1,11 +1,16 @@
 import Fastify, { type FastifyServerOptions } from 'fastify';
 import { registerHealthRoutes } from '#/routes/health.js';
 import { registerGameRoutes } from '#/modules/nfl/routes/games-routes.js';
+import cors from '@fastify/cors';
 
 export function buildApp(options: FastifyServerOptions = {}) {
   const app = Fastify({
     logger: true,
     ...options,
+  });
+
+  app.register(cors, {
+    origin: process.env.CORS_ORIGIN,
   });
 
   app.setErrorHandler((error: Error & { statusCode?: number }, request, reply) => {
