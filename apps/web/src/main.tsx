@@ -1,8 +1,9 @@
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import LocaleProvider from '@/app/providers/LocaleProvider';
-import App from './App';
+import LocaleProvider from '@/app/providers/locale-provider';
+import QueryProvider from '@/app/providers/query-provider';
+import App from './app';
 import './index.css';
 
 const rootElement = document.getElementById('root');
@@ -14,7 +15,9 @@ if (!rootElement) {
 createRoot(rootElement).render(
   <StrictMode>
     <LocaleProvider>
-      <App />
+      <QueryProvider>
+        <App />
+      </QueryProvider>
     </LocaleProvider>
   </StrictMode>,
 );
