@@ -18,3 +18,5 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     </LocaleContext>
   );
 }
+
+export default LocaleProvider;
