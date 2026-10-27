@@ -10,7 +10,7 @@ export function buildApp(options: FastifyServerOptions = {}) {
   });
 
   app.register(cors, {
-    origin: process.env.CORS_ORIGIN,
+    origin: process.env.WEB_ORIGIN,
   });
 
   app.setErrorHandler((error: Error & { statusCode?: number }, request, reply) => {

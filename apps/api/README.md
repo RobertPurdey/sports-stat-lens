@@ -9,7 +9,10 @@ Create a `.env` file in `apps/api` with the following configuration:
 
 ```env
 ESPN_SCOREBOARD_URL=https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard
+WEB_ORIGIN=http://localhost:5173
 ```
+
+**Note:** WEB_ORIGIN must match the web projects origin or the web will be denied API access.
 
 ---
 
