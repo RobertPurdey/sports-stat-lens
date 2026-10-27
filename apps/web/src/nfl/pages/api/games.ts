@@ -1,5 +1,5 @@
 import { apiFetch } from '@/api/client';
-import type { NflGame } from '@/api/nfl/types';
+import type { NflGame } from '@/nfl/pages/api/types';
 
 const BASE_URL = 'api/nfl/games';
 
