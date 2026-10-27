@@ -1,7 +1,7 @@
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { LocaleProvider } from '@/contexts/LocaleProvider';
+import { LocaleProvider } from '@/app/providers/LocaleProvider';
 import App from './App';
 import './index.css';
 
