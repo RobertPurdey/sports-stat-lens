@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getNflGames } from '@/nfl/pages/api/games';
+import { getNflGames } from '@/nfl/api/games';
 
 export function useNflGames() {
   return useQuery({
