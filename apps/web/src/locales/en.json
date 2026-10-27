@@ -1,10 +1,19 @@
 {
   "brandName": "SportsLens",
+  "final": "Final",
   "gameOverview": "A clear view of the game",
+  "gameTime": "Game time",
+  "gamesUnavailable": "No games availabie at this time",
   "headline": "See the game",
   "headlineAccent": "differently.",
   "introduction": "Explore sports data, uncover performance trends, and discover the stories behind the numbers.",
+  "kickoff": "Kickoff",
+  "live": "Live",
+  "loadGameError": "Unable to load games. Please try again.",
+  "loadingGames": "Loading games...",
   "navigationLabel": "Main navigation",
   "nfl": "NFL",
-  "tagline": "See the game differently."
+  "tagline": "See the game differently.",
+  "upcoming": "Upcoming",
+  "weeklyGames": "Weekly Games"
 }
