@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router';
-import { useLocale } from '@/contexts/useLocale';
+import { useLocale } from '@/contexts/use-locale';
 import Navigation from '@/components/navigation';
 
 function AppLayout() {
