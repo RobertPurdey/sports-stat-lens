@@ -1,0 +1,1 @@
+export const REGULAR_SEASON_WEEKS = 18;
