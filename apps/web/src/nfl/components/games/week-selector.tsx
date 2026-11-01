@@ -34,7 +34,7 @@ export function WeekSelector({ currentWeek, totalWeeks, onWeekChange }: WeekSele
                   }
                 `}
               >
-                {`${text.week} ${week}`}
+                {text.week} {week}
               </button>
             </li>
           );
