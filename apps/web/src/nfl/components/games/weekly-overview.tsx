@@ -10,17 +10,25 @@ function WeeklyOverview() {
   const { data: games, isPending, isError } = useNflGames();
   const [selectedWeek, setSelectedWeek] = useState(1);
 
-  if (isPending) {
-    return <p className="text-sm text-secondary">{text.loadingGames}</p>;
-  }
+  const renderGames = () => {
+    if (isPending) {
+      return <p className="text-sm text-secondary">{text.loadingGames}</p>;
+    }
 
-  if (isError) {
-    return <p className="text-sm text-red-400">{text.loadGameError}</p>;
-  }
+    if (isError) {
+      return <p className="text-sm text-red-400">{text.loadGameError}</p>;
+    }
 
-  if (!games?.length) {
-    return <p className="text-sm text-secondary">{text.gamesUnavailable}</p>;
-  }
+    if (!games?.length) {
+      return <p className="text-sm text-secondary">{text.gamesUnavailable}</p>;
+    }
+
+    return (
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {games.map(game => <GameCard key={game.id} game={game} />)}
+      </div>
+    );
+  };
 
   return (
     <section className="space-y-4">
@@ -30,9 +38,7 @@ function WeeklyOverview() {
         onWeekChange={setSelectedWeek}
       />
       <h2 className="text-lg font-semibold text-foreground">{text.weeklyGames}</h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        { games.map(game => <GameCard key={game.id} game={game} />) }
-      </div>
+      {renderGames()}
     </section>
   )
 }
