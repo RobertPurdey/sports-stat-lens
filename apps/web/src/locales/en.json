@@ -1,6 +1,7 @@
 {
   "brandName": "SportsLens",
   "final": "Final",
+  "games": "Games",
   "gameOverview": "A clear view of the game",
   "gameTime": "Game time",
   "gamesUnavailable": "No games availabie at this time",
@@ -15,6 +16,5 @@
   "nfl": "NFL",
   "tagline": "See the game differently.",
   "upcoming": "Upcoming",
-  "week": "Week",
-  "weeklyGames": "Weekly Games"
+  "week": "Week"
 }

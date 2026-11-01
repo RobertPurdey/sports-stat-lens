@@ -37,7 +37,7 @@ function WeeklyOverview() {
         totalWeeks={REGULAR_SEASON_WEEKS}
         onWeekChange={setSelectedWeek}
       />
-      <h2 className="text-lg font-semibold text-foreground">{text.weeklyGames}</h2>
+      <h2 className="text-lg font-semibold text-foreground">{text.week} {selectedWeek} {text.games}</h2>
       {renderGames()}
     </section>
   )
