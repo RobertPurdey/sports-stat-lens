@@ -1,6 +1,6 @@
-import { useLocale } from "@/contexts/use-locale";
-import { useNflGames } from "@/nfl/api/hooks/use-nfl-games";
-import GameCard from "@/nfl/components/games/game-card";
+import { useLocale } from '@/contexts/use-locale';
+import { useNflGames } from '@/nfl/api/hooks/use-nfl-games';
+import GameCard from '@/nfl/components/games/game-card';
 
 function WeeklyOverview() {
   const { text } = useLocale();
