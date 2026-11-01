@@ -94,3 +94,5 @@ export function GameCard({ game }: GameCardProps) {
     </article>
   );
 }
+
+export default GameCard;
