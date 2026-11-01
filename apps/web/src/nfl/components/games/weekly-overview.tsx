@@ -7,8 +7,11 @@ import { REGULAR_SEASON_WEEKS } from '@/nfl/constants';
 
 function WeeklyOverview() {
   const { text } = useLocale();
-  const { data: games, isPending, isError } = useNflGames();
   const [selectedWeek, setSelectedWeek] = useState(1);
+  const { data: games, isPending, isError } = useNflGames(selectedWeek);
+  const sortedGames = games?.toSorted(
+    (a, b) => new Date(a.kickoff).getTime() - new Date(b.kickoff).getTime()
+  );
 
   const renderGames = () => {
     if (isPending) {
@@ -25,7 +28,7 @@ function WeeklyOverview() {
 
     return (
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {games.map(game => <GameCard key={game.id} game={game} />)}
+        {sortedGames?.map(game => <GameCard key={game.id} game={game} />)}
       </div>
     );
   };
